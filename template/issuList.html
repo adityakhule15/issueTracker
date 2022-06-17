@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="fw-bold">Total Issus</h1>
+                    </div>
+                    <button>Add Issus</button>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Tags</th>
+                                    <th>Heading</th>
+                                    <th>Body</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for p in Issus %}
+                                    <tr>
+                                        <td>{{ p.Id }} </td>
+                                        <td>{{ p.Tags }} </td>
+                                        <td>{{ p.Heading }} </td>
+                                        <td>{{ p.Body }} </td>
+                                        <td><button>Edit</button><br><button>Delete</button></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
